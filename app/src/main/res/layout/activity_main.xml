@@ -26,14 +26,14 @@
         android:id="@+id/editTextValue2"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="9dp"
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text_Valor"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_Operacoes"
+        app:layout_constraintTop_toBottomOf="@+id/editTextValue1"
         tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck" />
 
     <TextView
@@ -47,30 +47,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextValue2" />
-
-    <Button
-        android:id="@+id/button_calcular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/calcular"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Resultado" />
-
-    <Spinner
-        android:id="@+id/spinner_Operacoes"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="33dp"
-        android:entries="@array/operation_array"
-        android:layout_marginEnd="9dp"
-        android:spinnerMode="dropdown"
-        android:contentDescription="@string/dropdown_for_operation_select"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextValue1" />
 
     <TextView
         android:id="@+id/text_Valor1"
@@ -95,4 +71,54 @@
         app:layout_constraintEnd_toStartOf="@+id/editTextValue2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/editTextValue2" />
+
+    <Button
+        android:id="@+id/button_soma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/soma"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_subtracao"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Resultado"
+        app:layout_constraintVertical_bias="0.136" />
+
+    <Button
+        android:id="@+id/button_divisao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/divisao"
+        app:layout_constraintBottom_toBottomOf="@+id/button_multiplicacao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_multiplicacao"
+        app:layout_constraintTop_toTopOf="@+id/button_multiplicacao"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_multiplicacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/multiplicacao"
+        app:layout_constraintBottom_toBottomOf="@+id/button_subtracao"
+        app:layout_constraintEnd_toStartOf="@+id/button_divisao"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_subtracao"
+        app:layout_constraintTop_toTopOf="@+id/button_subtracao"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_subtracao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subtracao"
+        app:layout_constraintBottom_toBottomOf="@+id/button_soma"
+        app:layout_constraintEnd_toStartOf="@+id/button_multiplicacao"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_soma"
+        app:layout_constraintTop_toTopOf="@+id/button_soma"
+        app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
