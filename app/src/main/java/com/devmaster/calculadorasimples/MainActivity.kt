@@ -40,7 +40,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             if (operacao != SELECIONE) {
                 val val1 = binding.editTextValue1.text.toString().toInt()
                 val val2 = binding.editTextValue2.text.toString().toInt()
-                if(val1.toString() == ""|| val2.toString() =="")Toast.makeText(this, "Faltou informat valor", Toast.LENGTH_SHORT).show()
+                if (val1.toString() == "" || val2.toString() == "") Toast.makeText(
+                    this,
+                    "Faltou informat valor",
+                    Toast.LENGTH_SHORT
+                ).show()
                 else {
                     when (operacao) {
                         SOMA -> {
@@ -50,8 +54,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                             if (val1 >= val2) binding.textResultado.text = (val1 - val2).toString()
                             else binding.textResultado.text = (val2 - val1).toString()
                         }
-                        MULTIPLICACAO -> {}
-                        DIVISAO -> {}
+                        MULTIPLICACAO -> {
+                            binding.textResultado.text = (val1 * val2).toString()
+                        }
+                        DIVISAO -> {
+                            if (val1 >= val2) binding.textResultado.text = (val1 / val2).toString()
+                            else binding.textResultado.text = (val2 / val1).toString()
+                        }
                     }
                 }
             } else {
